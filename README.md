@@ -38,15 +38,15 @@ grunt.initConfig({
 The name is the last part of the path.
 
 This will create for views this files :
-- {path}/{name}_controller.js
-- {path}/{name}_service.js
+- {path}/{name}Controller.js
+- {path}/{name}Service.js
 - {path}/{name}.css
 - {path}/{name}.html
 
 This will create for views this files :
-- {path}/{name}_controller.js
-- {path}/{name}_directive.js
-- {path}/{name}_service.js
+- {path}/{name}Controller.js
+- {path}/{name}Directive.js
+- {path}/{name}Service.js
 - {path}/{name}.css
 - {path}/{name}.html
 
@@ -60,15 +60,15 @@ app/
  |  | home/
  |  |  | home.html
  |  |  | home.css
- |  |  | home_controller.js
- |  |  | home_service.js
+ |  |  | homeController.js
+ |  |  | homeService.js
  |  |  | components/
  |  |  |  | siteHeader/
  |  |  |  |  | siteHeader.css
  |  |  |  |  | siteHeader.html
- |  |  |  |  | siteHeader_controller.js
- |  |  |  |  | siteHeader_directive.js
- |  |  |  |  | siteHeader_service.js
+ |  |  |  |  | siteHeaderController.js
+ |  |  |  |  | siteHeaderDirective.js
+ |  |  |  |  | siteHeaderService.js
  ```
 
 ```js

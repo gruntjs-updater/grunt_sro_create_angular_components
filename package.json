@@ -1,23 +1,23 @@
 {
   "name": "grunt-sro-create-angular-components",
   "description": "A little tool to create angularJS  components",
-  "version": "0.1.0",
-  "homepage": "https://github.com/romainseb/grunt-sro-create-angular-components",
+  "version": "0.1.1",
+  "homepage": "https://github.com/romainseb/grunt_sro_create_angular_components",
   "author": {
     "name": "romainseb",
     "email": "sebastien.romain@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/romainseb/grunt-sro-create-angular-components.git"
+    "url": "git://github.com/romainseb/grunt_sro_create_angular_components.git"
   },
   "bugs": {
-    "url": "https://github.com/romainseb/grunt-sro-create-angular-components/issues"
+    "url": "https://github.com/romainseb/grunt_sro_create_angular_components/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/romainseb/grunt-sro-create-angular-components/blob/master/LICENSE-MIT"
+      "url": "https://github.com/romainseb/grunt_sro_create_angular_components/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
@@ -28,8 +28,6 @@
   },
   "devDependencies": {
     "grunt-contrib-jshint": "^0.9.2",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-nodeunit": "^0.3.3",
     "grunt": "~0.4.5"
   },
   "peerDependencies": {

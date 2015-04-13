@@ -14,10 +14,17 @@ function capitalizeFirstLetter(string) {
 
 module.exports = function (grunt) {
 
-    var createHtmlFile = function (path, componentName) {
+    var createHtmlViewFile = function (path, componentName) {
         grunt.file.write(
             path + "/" + componentName + ".html",
             '<div id="' + componentName + '"></div>'
+        );
+    };
+
+    var createHtmlDirectiveFile = function (path, componentName) {
+        grunt.file.write(
+            path + "/" + componentName + ".html",
+            '<div class="' + componentName + '"></div>'
         );
     };
 
@@ -30,7 +37,7 @@ module.exports = function (grunt) {
 
     var createControllerFile = function (path, componentName, moduleName) {
         grunt.file.write(
-            path + "/" + componentName + "_controller.js",
+            path + "/" + componentName + "Controller.js",
             "angular.module('" + moduleName + "').controller('" +
             capitalizeFirstLetter(componentName) + "Controller',\n\tfunction (){\n\t}\n);"
         );
@@ -38,7 +45,7 @@ module.exports = function (grunt) {
 
     var createServiceFile = function (path, componentName, moduleName) {
         grunt.file.write(
-            path + "/" + componentName + "_service.js",
+            path + "/" + componentName + "Service.js",
             "angular.module('" + moduleName + "').service('" +
             capitalizeFirstLetter(componentName) + "Service',\n\tfunction (){\n\t}\n);"
         );
@@ -46,7 +53,7 @@ module.exports = function (grunt) {
 
     var createDirectiveFile = function (path, componentName, moduleName) {
         grunt.file.write(
-            path + "/" + componentName + "_direcive.js",
+            path + "/" + componentName + "Direcive.js",
             "angular.module('" + moduleName + "').directive('" +
             componentName + "',\n" +
             "\tfunction (){\n" +
@@ -78,7 +85,7 @@ module.exports = function (grunt) {
             for (i = 0; i < views.length; i++) {
                 componentName = views[i].split("/").slice(-1).pop();
                 if (!grunt.file.exists(views[i])) {
-                    createHtmlFile(views[i], componentName);
+                    createHtmlViewFile(views[i], componentName);
                     createCssFile(views[i], componentName);
                     createControllerFile(views[i], componentName, moduleName);
                     createServiceFile(views[i], componentName, moduleName);
@@ -91,7 +98,7 @@ module.exports = function (grunt) {
             for (i = 0; i < directives.length; i++) {
                 componentName = directives[i].split("/").slice(-1).pop();
                 if (!grunt.file.exists(directives[i])) {
-                    createHtmlFile(directives[i], componentName);
+                    createHtmlDirectiveFile(directives[i], componentName);
                     createCssFile(directives[i], componentName);
                     createControllerFile(directives[i], componentName, moduleName);
                     createServiceFile(directives[i], componentName, moduleName);

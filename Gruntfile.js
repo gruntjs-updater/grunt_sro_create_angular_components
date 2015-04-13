@@ -30,7 +30,8 @@ module.exports = function (grunt) {
                     "app/views/home"
                 ],
                 directives: [
-                    "app/views/home/components/header"
+                    "app/views/home/components/siteHeader",
+                    "app/views/home/components/siteAbout"
                 ]
             }
         }
