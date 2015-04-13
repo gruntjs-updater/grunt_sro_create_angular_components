@@ -1,7 +1,7 @@
 {
   "name": "grunt-sro-create-angular-components",
   "description": "A little tool to create angularJS  components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/romainseb/grunt_sro_create_angular_components",
   "author": {
     "name": "romainseb",
