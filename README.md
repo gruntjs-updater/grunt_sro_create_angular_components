@@ -54,6 +54,7 @@ This will create for views this files :
 
 This will create the following content :
 
+```js
 app/
  | views/
  |  | home/
@@ -68,6 +69,7 @@ app/
  |  |  |  |  | siteHeader_controller.js
  |  |  |  |  | siteHeader_directive.js
  |  |  |  |  | siteHeader_service.js
+ ```
 
 ```js
 grunt.initConfig({
