@@ -53,7 +53,7 @@ module.exports = function (grunt) {
 
     var createDirectiveFile = function (path, componentName, moduleName) {
         grunt.file.write(
-            path + "/" + componentName + "Direcive.js",
+            path + "/" + componentName + "Directive.js",
             "angular.module('" + moduleName + "').directive('" +
             componentName + "',\n" +
             "\tfunction (){\n" +
