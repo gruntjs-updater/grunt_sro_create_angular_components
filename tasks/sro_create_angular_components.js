@@ -39,7 +39,7 @@ module.exports = function (grunt) {
         grunt.file.write(
             path + "/" + componentName + "Controller.js",
             "angular.module('" + moduleName + "').controller('" +
-            capitalizeFirstLetter(componentName) + "Controller',\n\tfunction (){\n\t}\n);"
+            capitalizeFirstLetter(componentName) + "Controller',\n\tfunction ('" + componentName + "Service'){\n\t}\n);"
         );
     };
 
