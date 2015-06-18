@@ -35,11 +35,12 @@ module.exports = function (grunt) {
         );
     };
 
-    var createControllerFile = function (path, componentName, moduleName) {
+    var createControllerFile = function (path, componentName, moduleName, initServiceController) {
+        var serviceController = initServiceController === true ? capitalizeFirstLetter(componentName) + "Service" : '';
         grunt.file.write(
             path + "/" + componentName + "Controller.js",
             "angular.module('" + moduleName + "').controller('" +
-            capitalizeFirstLetter(componentName) + "Controller',\n\tfunction ('" + componentName + "Service'){\n\t}\n);"
+            capitalizeFirstLetter(componentName) + "Controller',\n\tfunction (" + serviceController + "){\n\t}\n);"
         );
     };
 
@@ -79,6 +80,8 @@ module.exports = function (grunt) {
         var directives = this.data.directives;
         var componentName = "";
 
+        var initServiceController = (this.data.options!==undefined && this.data.options.initServiceController !== undefined) ? this.data.options.initServiceController : false;
+
         var i = 0;
 
         if (views !== undefined) {
@@ -87,7 +90,7 @@ module.exports = function (grunt) {
                 if (!grunt.file.exists(views[i])) {
                     createHtmlViewFile(views[i], componentName);
                     createCssFile(views[i], componentName);
-                    createControllerFile(views[i], componentName, moduleName);
+                    createControllerFile(views[i], componentName, moduleName, initServiceController);
                     createServiceFile(views[i], componentName, moduleName);
                     console.log(componentName + " view created");
                 }
@@ -100,7 +103,7 @@ module.exports = function (grunt) {
                 if (!grunt.file.exists(directives[i])) {
                     createHtmlDirectiveFile(directives[i], componentName);
                     createCssFile(directives[i], componentName);
-                    createControllerFile(directives[i], componentName, moduleName);
+                    createControllerFile(directives[i], componentName, moduleName, initServiceController);
                     createServiceFile(directives[i], componentName, moduleName);
                     createDirectiveFile(directives[i], componentName, moduleName);
 
