@@ -32,7 +32,10 @@ module.exports = function (grunt) {
                 directives: [
                     "app/views/home/components/siteHeader",
                     "app/views/home/components/siteAbout"
-                ]
+                ],
+                options: {
+                    initServiceController: true
+                }
             }
         }
 
