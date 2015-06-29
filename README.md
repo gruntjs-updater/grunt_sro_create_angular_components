@@ -85,3 +85,25 @@ grunt.initConfig({
   },
 });
 ```
+
+### Options
+
+There is an option called "initServiceController" that you can set to false to disable the injection in the controller of the related service.
+
+```js
+grunt.initConfig({
+  sro_create_angular_components: {
+    moduleName: {
+      views:[
+        //list of paths for view
+       ],
+       directives:[
+       //list of paths for components
+       },
+       options: {
+          initServiceController: true
+      }
+    }
+  },
+});
+```
