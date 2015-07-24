@@ -22,8 +22,6 @@ module.exports = function (grunt) {
                 jshintrc: '.jshintrc'
             }
         },
-
-        // Configuration to be run (and then tested).
         sro_create_angular_components: {
             website: {
                 views: [
@@ -34,7 +32,8 @@ module.exports = function (grunt) {
                     "app/views/home/components/siteAbout"
                 ],
                 options: {
-                    initServiceController: true
+                    initServiceController: true,
+                    cssSuffix: 'less'
                 }
             }
         }

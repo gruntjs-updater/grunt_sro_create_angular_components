@@ -28,9 +28,10 @@ module.exports = function (grunt) {
         );
     };
 
-    var createCssFile = function (path, componentName) {
+    var createCssFile = function (path, componentName, cssSuffix) {
+
         grunt.file.write(
-            path + "/" + componentName + ".css",
+            path + "/" + componentName + '.' + cssSuffix,
             ''
         );
     };
@@ -80,7 +81,8 @@ module.exports = function (grunt) {
         var directives = this.data.directives;
         var componentName = "";
 
-        var initServiceController = (this.data.options!==undefined && this.data.options.initServiceController !== undefined) ? this.data.options.initServiceController : false;
+        var initServiceController = (this.data.options !== undefined && this.data.options.initServiceController !== undefined) ? this.data.options.initServiceController : false;
+        var cssSuffix = (this.data.options !== undefined && this.data.options.cssSuffix !== undefined) ? this.data.options.cssSuffix : 'css';
 
         var i = 0;
 
@@ -89,7 +91,7 @@ module.exports = function (grunt) {
                 componentName = views[i].split("/").slice(-1).pop();
                 if (!grunt.file.exists(views[i])) {
                     createHtmlViewFile(views[i], componentName);
-                    createCssFile(views[i], componentName);
+                    createCssFile(views[i], componentName, cssSuffix);
                     createControllerFile(views[i], componentName, moduleName, initServiceController);
                     createServiceFile(views[i], componentName, moduleName);
                     console.log(componentName + " view created");
