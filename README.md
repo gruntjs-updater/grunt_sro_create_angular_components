@@ -89,6 +89,7 @@ grunt.initConfig({
 ### Options
 
 There is an option called "initServiceController" that you can set to false to disable the injection in the controller of the related service.
+There is an option called "cssSuffix" that you can set to modify the extension of the style files
 
 ```js
 grunt.initConfig({
@@ -101,7 +102,8 @@ grunt.initConfig({
        //list of paths for components
        },
        options: {
-          initServiceController: true
+          initServiceController: true,
+          cssSuffix: 'less'
       }
     }
   },
