@@ -103,7 +103,7 @@ grunt.initConfig({
        },
        options: {
           initServiceController: true,
-          cssSuffix: 'less'
+          cssSuffix: 'less' //scss
       }
     }
   },

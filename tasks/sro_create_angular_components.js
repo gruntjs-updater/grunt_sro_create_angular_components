@@ -63,7 +63,7 @@ module.exports = function (grunt) {
             '\t\t\trestrict:"E",\n' +
             '\t\t\tbindToController : {},\n' +
             '\t\t\tcontroller:"' + capitalizeFirstLetter(componentName) + 'Controller",\n' +
-            '\t\t\tcontrollerAs :"' + componentName + '",\n' +
+            '\t\t\tcontrollerAs : "vm",\n' +
             '\t\t\ttemplateUrl : "' + path + "/" + componentName + '.html",\n' +
             '\t\t\tscope : true\n' +
             '\t\t};\n' +
