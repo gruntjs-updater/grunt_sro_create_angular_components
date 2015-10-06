@@ -104,7 +104,7 @@ module.exports = function (grunt) {
                 componentName = directives[i].split("/").slice(-1).pop();
                 if (!grunt.file.exists(directives[i])) {
                     createHtmlDirectiveFile(directives[i], componentName);
-                    createCssFile(directives[i], componentName);
+                    createCssFile(directives[i], componentName, cssSuffix);
                     createControllerFile(directives[i], componentName, moduleName, initServiceController);
                     createServiceFile(directives[i], componentName, moduleName);
                     createDirectiveFile(directives[i], componentName, moduleName);
